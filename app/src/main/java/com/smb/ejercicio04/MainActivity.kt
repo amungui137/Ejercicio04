@@ -12,6 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.smb.ejercicio04.ui.theme.Ejercicio04Theme
+import com.smb.ejercicio04.ui.theme.MyIcon
+import com.smb.ejercicio04.ui.theme.MyImage
+import com.smb.ejercicio04.ui.theme.MyImageAdvanced
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MySwitch()
+                    MyIcon()
                 }
             }
         }
