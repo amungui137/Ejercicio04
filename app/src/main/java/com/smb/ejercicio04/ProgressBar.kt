@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -50,6 +51,12 @@ fun MyProgress() {
 
             )
         }
+
+        LinearProgressIndicator(
+            modifier = Modifier.padding(top = 32.dp),
+            color = Color.Red,
+            trackColor = Color.Green
+        )
 
         Button(onClick = { showLoading = !showLoading }) {
             Text(text = "Cargar perfil")
