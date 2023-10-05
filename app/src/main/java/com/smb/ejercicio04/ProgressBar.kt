@@ -2,7 +2,9 @@ package com.smb.ejercicio04
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -60,6 +62,36 @@ fun MyProgress() {
 
         Button(onClick = { showLoading = !showLoading }) {
             Text(text = "Cargar perfil")
+        }
+    }
+}
+
+@Composable
+fun MyProgressAdvance() {
+    var progressStatus by rememberSaveable {
+        mutableStateOf(0f)
+    }
+    Column(
+        Modifier
+            .padding(24.dp)
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        LinearProgressIndicator(progress = progressStatus)
+
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(30.dp),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(onClick = { progressStatus += 0.1f }) {
+                Text(text = "Sumar")
+            }
+            Button(onClick = { progressStatus -= 0.1f }) {
+                Text(text = "Restar")
+            }
         }
     }
 }
